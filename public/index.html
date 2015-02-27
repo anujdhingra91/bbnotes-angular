@@ -1,15 +1,23 @@
 <html ng-app=ang-bbnotes>
 
     <title>Angular BB Notes</title>
+    <link rel=stylesheet type=text/css href=index.css>
+    <link rel=stylesheet type=text/css href=frame/navbar.css>
+    <link rel=stylesheet type=text/css href=notes/display/note-item.css>
 
-    <a ui-sref=home>Go home</a>
-    <a ui-sref=notes>View Notes</a>
-    <a ui-sref=notes.add>Add Note</a>
+    <nav class="global-nav-container clearfix">
+        <ul class=global-nav>
+            <li class=nav-item><a class=nav-link ui-sref=home>Go home</a></li>
+            <li class=nav-item><a class=nav-link ui-sref=notes>View Notes</a></li>
+            <li class=nav-item><a class=nav-link ui-sref=notes.add>Add Note</a></li>
+        </ul>
+    </nav>
 
-    <ui-view></ui-view>
+    <main class=content ui-view></main>
 
     <script src=//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js></script>
     <script src=//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js></script>
+    <script src=//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.js></script>
     <script src=ang-bbnotes.js></script>
 
     <script src=notes/notes.js></script>

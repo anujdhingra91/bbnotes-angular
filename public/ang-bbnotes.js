@@ -2,7 +2,7 @@
  * Module for displaying notes and allowing CRUD operations on notes
  */
 
-angular.module("ang-bbnotes", ["ui.router"]).config(["$stateProvider", "$urlRouterProvider",
+angular.module("ang-bbnotes", ["ui.router", "ngAnimate"]).config(["$stateProvider", "$urlRouterProvider",
 function ($stateProvider, $urlRouterProvider) {
     // Default route (homepage)
     $urlRouterProvider.otherwise("/home");

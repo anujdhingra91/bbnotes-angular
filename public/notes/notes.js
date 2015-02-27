@@ -43,6 +43,9 @@ angular.module("ang-bbnotes").factory("notes", ["$http", function ($http) {
 
         fetchNotes: function () {
             return $http.get("/notes").success(function (serverNotes) {
+                // clear the array
+                notesArray.splice(0);
+
                 serverNotes.forEach(addNote);
             });
         },
