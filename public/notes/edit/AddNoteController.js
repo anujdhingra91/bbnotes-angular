@@ -1,4 +1,4 @@
-angular.module("ang-bbnotes").controller("NotesAddController", ["notes",
+angular.module("ang-bbnotes").controller("AddNoteController", ["notes",
 function (notes) {
     this.note = {};
 

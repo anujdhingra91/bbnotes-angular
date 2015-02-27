@@ -26,16 +26,16 @@ function ($stateProvider, $urlRouterProvider) {
             // edit route will match first)
             .state("notes.add", {
                 url: "/add",
-                controller: "NotesAddController",
+                controller: "AddNoteController",
                 controllerAs: "note",
-                templateUrl: "notes/note-form.html",
+                templateUrl: "notes/edit/note-form.html",
             })
             // Edit an individual note
             .state("notes.edit", {
                 url: "/:id",
-                controller: "NotesEditController",
+                controller: "EditNoteController",
                 controllerAs: "note",
-                templateUrl: "notes/note-form.html",
+                templateUrl: "notes/edit/note-form.html",
             })
     ;
 }]);

@@ -1,4 +1,4 @@
-angular.module("ang-bbnotes").controller("NotesEditController", ["notes", "$stateParams", "$state",
+angular.module("ang-bbnotes").controller("EditNoteController", ["notes", "$stateParams", "$state",
 function (notes, $stateParams, $state) {
     var note = notes.getNote($stateParams.id);
 

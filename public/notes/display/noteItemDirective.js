@@ -10,6 +10,6 @@ angular.module("ang-bbnotes").directive("noteItem", function () {
         scope: {
             "note": "=noteItem",
         },
-        templateUrl: "notes/note-item.html",
+        templateUrl: "notes/display/note-item.html",
     };
 });
