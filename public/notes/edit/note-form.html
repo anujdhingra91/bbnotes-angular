@@ -10,7 +10,7 @@
     <br>
 
 
-    <textarea ng-model=note.note.text required name="text"></textarea>
+    <textarea ng-model=note.note.text name="text" required></textarea>
     <span style="color:red" ng-show="myForm.text.$dirty && myForm.text.$invalid">
     <span ng-show="myForm.text.$error.required">Text is required.</span>
     </span>
@@ -19,7 +19,7 @@
     <br>
 
     <p>
-    <input type="submit" ng-disabled="myForm.currentNoteTitle.$dirty && myForm.currentNoteTitle.$invalid || myForm.text.$dirty && myForm.text.$invalid" value="Save Note">
+    <input type="submit" ng-disabled="myForm.$invalid" value="Save Note">
     </p>
 
 

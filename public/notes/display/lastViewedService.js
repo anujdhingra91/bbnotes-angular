@@ -19,8 +19,9 @@ angular.module("ang-bbnotes").service("lastViewedService",function(){
     },
 
     clearSelectedNote: function () {
-        alert("Removed")
+        //alert("Removed")
         currentNote = {};
+
     },
 
     getCurrentDateState: function(){

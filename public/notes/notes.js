@@ -2,6 +2,7 @@ angular.module("ang-bbnotes").factory("notes", ["$http","lastViewedService", fun
     var notesService,
         notesArray = [];
 
+
     /**
      * Add a note to the notes list with extended functionality
      */
@@ -15,8 +16,6 @@ angular.module("ang-bbnotes").factory("notes", ["$http","lastViewedService", fun
 
         note.setNote= function(){
             lastViewedService.setSelectedNote(note);
-
-
         },
 
         note.save = function () {
