@@ -5,15 +5,14 @@
     <link rel=stylesheet type=text/css href=frame/navbar.css>
     <link rel=stylesheet type=text/css href=notes/display/note-item.css>
 
-    <nav class="global-nav-container clearfix">
-        <ul class=global-nav>
-            <li class=nav-item><a class=nav-link ui-sref=home>Go home</a></li>
-            <li class=nav-item><a class=nav-link ui-sref=notes>View Notes</a></li>
-            <li class=nav-item><a class=nav-link ui-sref=notes.add>Add Note</a></li>
-        </ul>
-    </nav>
+    <nav class="global-nav-container clearfix" navigation-bar-directive></nav>
+
+    <current-page-directive></current-page-directive>
+
+    <last-viewed-directive class="lastViewed"></last-viewed-directive>
 
     <main class=content ui-view></main>
+
 
     <script src=//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js></script>
     <script src=//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js></script>
@@ -26,6 +25,14 @@
     <script src=notes/edit/EditNoteController.js></script>
     <script src=notes/edit/AddNoteController.js></script>
     <script src=notes/display/noteItemDirective.js></script>
+    <script src="notes/display/navigationBarDirective.js"></script>
+    <script src="notes/display/navBarController.js"></script>
+    <script src="notes/display/currentPageController.js"></script>
+    <script src="notes/display/currentPageDirective.js"></script>
+    <script src="notes/display/lastViewedController.js"></script>
+    <script src="notes/display/lastViewedDirective.js"></script>
+    <script src="notes/display/lastViewedService.js"></script>
+
 
     <script src=home/HomeController.js></script>
 </html>

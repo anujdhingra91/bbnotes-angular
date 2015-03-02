@@ -90,6 +90,6 @@ app.delete("/notes/:id", function (req, res) {
     }
 });
 
-http.createServer(app).listen(8000, function () {
-    console.log("Listening on port 8000");
+http.createServer(app).listen(8001, function () {
+    console.log("Listening on port 8001");
 });

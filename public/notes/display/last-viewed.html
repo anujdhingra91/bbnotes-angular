@@ -1,0 +1,11 @@
+<div ng-hide="!lv.getSelectedNote().title">
+    <input type="text" ng-model="lv.getSelectedNote().title" disabled/><span class=remove-note ng-click=lv.getSelectedNote().remove()>&times;</span>
+<br>
+
+<textarea ng-model="lv.getSelectedNote().text" disabled></textarea>
+    </div>
+
+<div ng-show="lv.showDate()">
+
+    <span>{{lv.getCurrentDate() | date:'yyyy-MM-dd h:mm:ss a'}}</span>
+</div>

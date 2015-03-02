@@ -17,3 +17,8 @@ body {
 .content {
     padding: 10px;
 }
+
+.lastViewed {
+    float: right;
+    margin-right: 40%;
+}

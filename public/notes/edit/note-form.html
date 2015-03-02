@@ -1,11 +1,26 @@
-<form ng-submit=note.save(note.note)>
-    <input ng-model=note.note.title>
+<form ng-submit=note.save(note.note) name="myForm" novalidate>
+
+    <input type="text" name="currentNoteTitle" ng-model=note.currentNoteTitle required>
+    <span style="color:red" ng-show="myForm.currentNoteTitle.$dirty && myForm.currentNoteTitle.$invalid">
+    <span ng-show="myForm.currentNoteTitle.$error.required">Title is required.</span>
+    </span>
+
+
 
     <br>
 
-    <textarea ng-model=note.note.text></textarea>
+
+    <textarea ng-model=note.note.text required name="text"></textarea>
+    <span style="color:red" ng-show="myForm.text.$dirty && myForm.text.$invalid">
+    <span ng-show="myForm.text.$error.required">Text is required.</span>
+    </span>
+
 
     <br>
 
-    <input type=submit value="Save Note">
+    <p>
+    <input type="submit" ng-disabled="myForm.currentNoteTitle.$dirty && myForm.currentNoteTitle.$invalid || myForm.text.$dirty && myForm.text.$invalid" value="Save Note">
+    </p>
+
+
 </form>

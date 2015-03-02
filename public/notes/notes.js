@@ -1,4 +1,4 @@
-angular.module("ang-bbnotes").factory("notes", ["$http", function ($http) {
+angular.module("ang-bbnotes").factory("notes", ["$http","lastViewedService", function ($http,lastViewedService) {
     var notesService,
         notesArray = [];
 
@@ -8,9 +8,16 @@ angular.module("ang-bbnotes").factory("notes", ["$http", function ($http) {
     function addNote(note) {
         note.remove = function () {
             $http.delete("/notes/" + note._id).success(function () {
-                notesArray.splice(notesArray.indexOf(note));
+                notesArray.splice(notesArray.indexOf(note),1);
+                lastViewedService.clearSelectedNote();
             });
         };
+
+        note.setNote= function(){
+            lastViewedService.setSelectedNote(note);
+
+
+        },
 
         note.save = function () {
             $http.put("/notes/" + note._id, note).success(function () {
@@ -44,9 +51,10 @@ angular.module("ang-bbnotes").factory("notes", ["$http", function ($http) {
         fetchNotes: function () {
             return $http.get("/notes").success(function (serverNotes) {
                 // clear the array
-                notesArray.splice(0);
+                    notesArray.splice(0);
 
-                serverNotes.forEach(addNote);
+                    serverNotes.forEach(addNote);
+
             });
         },
 
@@ -54,7 +62,7 @@ angular.module("ang-bbnotes").factory("notes", ["$http", function ($http) {
             $http.post("/notes", note).success(function (note) {
                 addNote(note);
             });
-        },
+        }
     };
 
     notesService.fetchNotes();
